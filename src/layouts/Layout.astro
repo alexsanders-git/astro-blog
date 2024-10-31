@@ -1,0 +1,18 @@
+---
+const { title } = Astro.props;
+
+const APP_NAME = import.meta.env.APP_NAME;
+---
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{`${title} - ${APP_NAME}`}</title>
+</head>
+<body>
+    <slot />
+</body>
+</html>
