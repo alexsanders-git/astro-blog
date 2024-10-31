@@ -1,5 +1,9 @@
 ---
-const { title } = Astro.props;
+interface IProps {
+    title: string
+}
+
+const { title } = Astro.props as IProps;
 
 const APP_NAME = import.meta.env.APP_NAME;
 ---
@@ -13,6 +17,11 @@ const APP_NAME = import.meta.env.APP_NAME;
     <title>{`${title} - ${APP_NAME}`}</title>
 </head>
 <body>
+    <header class='p-5 bg-green-200'>
+        <a href='/'>Home</a>
+        <a href='/blog'>Blog</a>
+    </header>
+
     <slot />
 </body>
 </html>
